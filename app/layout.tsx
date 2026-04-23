@@ -7,7 +7,7 @@ import { getTunisiaHomeContent } from "@/content/markets/tunisia";
 import { tunisiaConfig } from "@/config/tunisia";
 import { tunisiaThemeVars } from "@/themes/tunisia";
 
-const defaultContent = getTunisiaHomeContent("fr");
+const defaultContent = getTunisiaHomeContent("ar");
 
 export const metadata: Metadata = {
   title: defaultContent.seo.title,
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="h-full">
+    <html lang="ar" dir="rtl" className="h-full">
       <body
         dir={tunisiaConfig.direction}
         style={tunisiaThemeVars as CSSProperties}

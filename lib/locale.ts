@@ -18,14 +18,14 @@ function firstValue(value: string | string[] | undefined) {
 
 export function resolveTunisiaLocale(searchParams?: SearchParamsRecord): Language {
   const candidate = firstValue(searchParams?.lang);
-  return tunisiaLocales.includes(candidate as Language) ? (candidate as Language) : "fr";
+  return tunisiaLocales.includes(candidate as Language) ? (candidate as Language) : "ar";
 }
 
 export function getTunisiaDirection(locale: Language) {
   return locale === "ar" ? "rtl" : "ltr";
 }
 
-export function localizeHref(href: string, locale: Language, fallback: Language = "fr") {
+export function localizeHref(href: string, locale: Language, fallback: Language = "ar") {
   if (/^(https?:|mailto:|tel:)/.test(href)) return href;
 
   const [pathWithQuery, hash] = href.split("#");

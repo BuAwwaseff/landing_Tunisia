@@ -11,7 +11,7 @@ type PageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-const defaultContent = getTunisiaPartnershipContent("fr");
+const defaultContent = getTunisiaPartnershipContent("ar");
 
 export const metadata: Metadata = {
   title: defaultContent.seo.title,

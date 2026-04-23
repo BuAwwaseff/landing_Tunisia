@@ -2540,5 +2540,5 @@ export const translations = {
 } satisfies Record<Language, TunisiaTranslations>;
 
 export function getTranslations(language: Language) {
-  return translations[language] ?? translations.fr;
+  return translations[language] ?? translations.ar;
 }

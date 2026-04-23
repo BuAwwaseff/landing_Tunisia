@@ -10,7 +10,7 @@ type PageProps = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-const defaultContent = getTunisiaHomeContent("fr");
+const defaultContent = getTunisiaHomeContent("ar");
 
 export const metadata: Metadata = {
   title: defaultContent.seo.title,
