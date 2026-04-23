@@ -1,0 +1,260 @@
+:root {
+  /* Color system */
+  --color-bg: #000000;
+  --color-bg-top: #050505;
+  --color-bg-mid: #020202;
+  --color-bg-bottom: #050505;
+  --color-fg: #ffffff;
+  --color-accent: #ffc100;
+  --color-accent-contrast: #000000;
+  --color-accent-soft: #ffd75a;
+  --color-cyan: #7cf0ff;
+
+  --color-white-03: rgba(255, 255, 255, 0.03);
+  --color-white-04: rgba(255, 255, 255, 0.04);
+  --color-white-045: rgba(255, 255, 255, 0.045);
+  --color-white-05: rgba(255, 255, 255, 0.05);
+  --color-white-06: rgba(255, 255, 255, 0.06);
+  --color-white-08: rgba(255, 255, 255, 0.08);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-16: rgba(255, 255, 255, 0.16);
+  --color-white-18: rgba(255, 255, 255, 0.18);
+  --color-white-28: rgba(255, 255, 255, 0.28);
+  --color-white-45: rgba(255, 255, 255, 0.45);
+  --color-white-58: rgba(255, 255, 255, 0.58);
+  --color-white-72: rgba(255, 255, 255, 0.72);
+  --color-white-90: rgba(255, 255, 255, 0.9);
+
+  --color-black-18: rgba(0, 0, 0, 0.18);
+  --color-black-22: rgba(0, 0, 0, 0.22);
+  --color-black-34: rgba(0, 0, 0, 0.34);
+  --color-black-35: rgba(0, 0, 0, 0.35);
+  --color-black-36: rgba(0, 0, 0, 0.36);
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-42: rgba(0, 0, 0, 0.42);
+  --color-black-46: rgba(0, 0, 0, 0.46);
+  --color-black-48: rgba(0, 0, 0, 0.48);
+  --color-black-55: rgba(0, 0, 0, 0.55);
+
+  --color-gold-05: rgba(255, 193, 0, 0.05);
+  --color-gold-08: rgba(255, 193, 0, 0.08);
+  --color-gold-10: rgba(255, 193, 0, 0.1);
+  --color-gold-11: rgba(255, 193, 0, 0.11);
+  --color-gold-12: rgba(255, 193, 0, 0.12);
+  --color-gold-16: rgba(255, 193, 0, 0.16);
+  --color-gold-18: rgba(255, 193, 0, 0.18);
+  --color-gold-20: rgba(255, 193, 0, 0.2);
+  --color-gold-22: rgba(255, 193, 0, 0.22);
+  --color-gold-24: rgba(255, 193, 0, 0.24);
+  --color-gold-26: rgba(255, 193, 0, 0.26);
+  --color-gold-28: rgba(255, 193, 0, 0.28);
+  --color-gold-30: rgba(255, 193, 0, 0.3);
+  --color-gold-32: rgba(255, 193, 0, 0.32);
+  --color-gold-34: rgba(255, 193, 0, 0.34);
+  --color-gold-36: rgba(255, 193, 0, 0.36);
+  --color-gold-38: rgba(255, 193, 0, 0.38);
+  --color-gold-42: rgba(255, 193, 0, 0.42);
+  --color-gold-58: rgba(255, 193, 0, 0.58);
+  --color-gold-82: rgba(255, 193, 0, 0.82);
+
+  --color-cyan-12: rgba(124, 240, 255, 0.12);
+  --color-cyan-22: rgba(124, 240, 255, 0.22);
+  --color-cyan-24: rgba(124, 240, 255, 0.24);
+
+  --color-surface-1: var(--color-white-04);
+  --color-surface-2: var(--color-white-06);
+  --color-surface-3: rgba(255, 255, 255, 0.025);
+  --color-surface-dark: rgba(10, 8, 4, 0.8);
+  --color-surface-dark-strong: rgba(8, 12, 16, 0.96);
+  --color-surface-dark-deep: rgba(3, 5, 8, 0.96);
+
+  --color-border-soft: var(--color-white-10);
+  --color-border-strong: var(--color-white-12);
+  --color-border-bright: var(--color-white-18);
+  --color-border-accent: var(--color-gold-22);
+
+  --color-text-soft: var(--color-white-72);
+  --color-text-faint: rgba(255, 255, 255, 0.48);
+  --color-text-muted: var(--color-white-58);
+
+  /* Layout */
+  --container-xs: 640px;
+  --container-sm: 840px;
+  --container-md: 1040px;
+  --container-lg: 1200px;
+  --container-xl: 1320px;
+  --container-main: 1100px;
+  --container-hero: 1500px;
+
+  --section-pad-y: clamp(72px, 8vw, 128px);
+  --section-pad-x: clamp(16px, 2vw, 28px);
+  --section-gap: clamp(20px, 3vw, 40px);
+
+  /* Universal spacing */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-18: 72px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Radius */
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 9999px;
+
+  /* Blur, glow, shadow */
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 18px;
+  --blur-xl: 28px;
+
+  --shadow-soft:
+    inset 0 1px 0 var(--color-white-03),
+    0 20px 60px var(--color-black-35);
+  --shadow-soft-strong:
+    inset 0 1px 0 var(--color-white-03),
+    0 24px 70px var(--color-black-40);
+  --shadow-hover:
+    inset 0 1px 0 var(--color-white-04),
+    0 28px 72px var(--color-black-42);
+  --shadow-gold: 0 10px 30px var(--color-gold-18);
+
+  --shadow-agent-wrap: 0 42px 90px var(--color-black-42);
+  --shadow-agent-stage:
+    inset 0 1px 0 var(--color-white-08),
+    inset 0 -1px 0 var(--color-white-04),
+    0 30px 90px var(--color-black-48);
+  --shadow-agent-chip:
+    inset 0 1px 0 var(--color-white-16),
+    0 18px 30px var(--color-black-34);
+  --shadow-agent-chip-accent:
+    inset 0 1px 0 var(--color-white-18),
+    0 0 0 8px var(--color-gold-08),
+    0 26px 40px var(--color-black-40);
+  --shadow-agent-caption:
+    inset 0 1px 0 var(--color-white-08),
+    0 18px 38px var(--color-black-36);
+  --shadow-legend-gold: 0 0 14px var(--color-gold-26);
+  --shadow-legend-cyan: 0 0 14px var(--color-cyan-22);
+
+  /* Typography */
+  --type-display: clamp(2.6rem, 4.9vw, 4rem);
+  --type-heading: clamp(1.88rem, 3.6vw, 2.88rem);
+  --type-subheading: clamp(1.6rem, 2.75vw, 2.34rem);
+  --type-card-title: clamp(1.24rem, 1.82vw, 1.72rem);
+  --type-body-lg: clamp(0.92rem, 1.08vw, 1.04rem);
+  --type-body: clamp(0.89rem, 0.96vw, 0.95rem);
+  --type-label: 0.8rem;
+  --type-meta: 0.7rem;
+  --type-hero-accent: clamp(0.78rem, 0.86vw, 0.92rem);
+  --type-stat: clamp(1.45rem, 2.6vw, 2.1rem);
+  --type-metric: clamp(2.8rem, 6.2vw, 4.8rem);
+  --type-metric-secondary: clamp(2rem, 4vw, 3.1rem);
+
+  --line-tight: 1.02;
+  --line-heading: 1.08;
+  --line-body: 1.7;
+
+  /* Motion */
+  --ease-standard: 180ms ease;
+  --ease-slow: 320ms ease;
+  --motion-agent-float: 8s ease-in-out infinite;
+  --motion-node-pulse: 3.4s ease-in-out infinite;
+  --motion-flow-deposit: 7.8s linear infinite;
+  --motion-flow-withdraw: 8.5s linear infinite;
+  --motion-symbol-pulse: 7s ease-in-out infinite;
+
+  /* Interactive background */
+  --bg-grid-size: 110px;
+  --bg-reveal-x: 72vw;
+  --bg-reveal-y: 35vh;
+  --mx: var(--bg-reveal-x);
+  --my: var(--bg-reveal-y);
+  --bg-reveal-radius: 80px;
+  --bg-reveal-softness: 60px;
+  --bg-reveal-mask-size: 140px;
+  --bg-reveal-stop-1: 22px;
+  --bg-reveal-stop-2: 40px;
+  --bg-reveal-stop-3: 70px;
+  --bg-reveal-stop-4: 100px;
+  --bg-reveal-blur: 10px;
+  --bg-film-blur: 4px;
+  --bg-reveal-overlay: rgba(10, 10, 10, 0.72);
+  --bg-vignette-color: var(--color-black-18);
+  --bg-symbol-line-opacity: 0.38;
+  --bg-symbol-glow-opacity: 0.58;
+  --bg-symbol-glow-blur: 4px;
+  --bg-symbol-glow-blur-mobile: 5px;
+  --bg-symbol-mobile-opacity: 0.72;
+  --bg-symbol-line-filter:
+    invert(73%)
+    sepia(95%)
+    saturate(1450%)
+    hue-rotate(358deg)
+    brightness(106%)
+    contrast(102%);
+  --bg-symbol-glow-filter:
+    invert(73%)
+    sepia(95%)
+    saturate(1253%)
+    hue-rotate(358deg)
+    brightness(108%)
+    contrast(103%);
+
+  /* Agent network */
+  --agent-tilt-x: 16deg;
+  --agent-tilt-y: -13deg;
+  --agent-float-shift: -8px;
+  --agent-world-opacity: 0.24;
+  --agent-world-blur: 0.6px;
+  --agent-scene-perspective: 1800px;
+  --agent-stage-world-z: 6px;
+  --agent-stage-world-scale: 1.08;
+  --agent-stage-glow-z: 10px;
+  --agent-node-z: 50px;
+  --agent-caption-z: 44px;
+  --agent-node-gap: 0.6rem;
+  --agent-player-chip-size: 2.8rem;
+  --agent-agent-chip-size: 4rem;
+  --agent-flow-width: 0.55;
+  --agent-flow-dash: 1.5 2.9;
+  --agent-flow-deposit: var(--color-gold-28);
+  --agent-flow-withdraw: var(--color-cyan-22);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --section-pad-y: clamp(56px, 8vw, 88px);
+    --section-gap: 20px;
+
+    --bg-grid-size: 64px;
+    --bg-reveal-radius: 40px;
+    --bg-reveal-softness: 40px;
+    --bg-reveal-mask-size: 80px;
+    --bg-reveal-stop-1: 11px;
+    --bg-reveal-stop-2: 20px;
+    --bg-reveal-stop-3: 35px;
+    --bg-reveal-stop-4: 50px;
+    --bg-film-blur: 1.5px;
+    --bg-symbol-glow-blur-mobile: 5px;
+
+    --agent-tilt-x: 10deg;
+    --agent-tilt-y: -7deg;
+    --agent-player-chip-size: 2.2rem;
+    --agent-agent-chip-size: 3.25rem;
+  }
+}

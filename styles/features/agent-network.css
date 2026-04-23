@@ -1,0 +1,190 @@
+@keyframes agentSceneFloat {
+  0% {
+    transform: rotateX(var(--agent-tilt-x)) rotateY(var(--agent-tilt-y)) translateY(0);
+  }
+
+  50% {
+    transform:
+      rotateX(var(--agent-tilt-x))
+      rotateY(var(--agent-tilt-y))
+      translateY(var(--agent-float-shift));
+  }
+
+  100% {
+    transform: rotateX(var(--agent-tilt-x)) rotateY(var(--agent-tilt-y)) translateY(0);
+  }
+}
+
+@keyframes agentNodePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 var(--color-gold-18),
+      0 0 0 12px rgba(255, 193, 0, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 6px var(--color-gold-08),
+      0 0 0 18px rgba(255, 193, 0, 0);
+  }
+}
+
+@keyframes agentFlowDeposit {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -30;
+  }
+}
+
+@keyframes agentFlowWithdraw {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 30;
+  }
+}
+
+.agent-section-world {
+  opacity: var(--agent-world-opacity);
+  filter: blur(var(--agent-world-blur));
+}
+
+.agent-scene-wrap {
+  perspective: var(--agent-scene-perspective);
+  filter: drop-shadow(var(--shadow-agent-wrap));
+}
+
+.agent-scene-stage {
+  transform-style: preserve-3d;
+  transform: rotateX(var(--agent-tilt-x)) rotateY(var(--agent-tilt-y)) translateY(0);
+  animation: agentSceneFloat var(--motion-agent-float);
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-surface-dark-strong) 0%,
+      var(--color-surface-dark-deep) 100%
+    );
+  box-shadow: var(--shadow-agent-stage);
+}
+
+.agent-stage-world {
+  opacity: 0.5;
+  transform: translateZ(var(--agent-stage-world-z)) scale(var(--agent-stage-world-scale));
+}
+
+.agent-stage-glow {
+  background:
+    radial-gradient(circle at 58% 38%, var(--color-gold-22) 0%, transparent 18%),
+    radial-gradient(circle at 50% 50%, var(--color-cyan-12) 0%, transparent 36%);
+  transform: translateZ(var(--agent-stage-glow-z));
+}
+
+.agent-stage-vignette {
+  background:
+    radial-gradient(circle at center, transparent 52%, var(--color-black-46) 100%);
+}
+
+.agent-scene-flow {
+  stroke-width: var(--agent-flow-width);
+  stroke-linecap: round;
+  stroke-dasharray: var(--agent-flow-dash);
+}
+
+.agent-scene-flow--deposit {
+  stroke: var(--agent-flow-deposit);
+  animation: agentFlowDeposit var(--motion-flow-deposit);
+}
+
+.agent-scene-flow--withdraw {
+  stroke: var(--agent-flow-withdraw);
+  animation: agentFlowWithdraw var(--motion-flow-withdraw);
+}
+
+.agent-scene-node {
+  z-index: 20;
+  transform: translate(-50%, -50%) translateZ(var(--agent-node-z));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--agent-node-gap);
+}
+
+.agent-scene-node__chip {
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background:
+    radial-gradient(circle at 30% 25%, var(--color-white-28) 0%, transparent 28%),
+    linear-gradient(180deg, var(--color-white-12) 0%, var(--color-white-04) 100%);
+  border: 1px solid var(--color-border-bright);
+  box-shadow: var(--shadow-agent-chip);
+}
+
+.agent-scene-node--player .agent-scene-node__chip {
+  width: var(--agent-player-chip-size);
+  height: var(--agent-player-chip-size);
+  animation: agentNodePulse var(--motion-node-pulse);
+}
+
+.agent-scene-node--agent .agent-scene-node__chip {
+  width: var(--agent-agent-chip-size);
+  height: var(--agent-agent-chip-size);
+  border-color: var(--color-gold-32);
+  box-shadow: var(--shadow-agent-chip-accent);
+}
+
+.agent-scene-node__label {
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-accent);
+  background: var(--color-black-55);
+  color: var(--color-white-90);
+  font-size: var(--type-meta);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.agent-scene-caption {
+  transform: translateX(-50%) translateZ(var(--agent-caption-z));
+  box-shadow: var(--shadow-agent-caption);
+}
+
+.agent-scene-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-text-soft);
+  font-size: var(--type-label);
+}
+
+.agent-scene-legend__swatch {
+  width: 1.4rem;
+  height: 0.4rem;
+  border-radius: var(--radius-pill);
+}
+
+.agent-scene-legend__swatch--deposit {
+  background:
+    linear-gradient(90deg, var(--color-gold-24) 0%, var(--color-accent) 100%);
+  box-shadow: var(--shadow-legend-gold);
+}
+
+.agent-scene-legend__swatch--withdraw {
+  background:
+    linear-gradient(90deg, var(--color-cyan-24) 0%, var(--color-cyan) 100%);
+  box-shadow: var(--shadow-legend-cyan);
+}
+
+@media (max-width: 767px) {
+  .agent-scene-stage {
+    animation: none;
+  }
+}

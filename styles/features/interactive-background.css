@@ -1,0 +1,162 @@
+.interactive-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.interactive-bg-base {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      var(--color-bg-top) 0%,
+      var(--color-bg-mid) 46%,
+      var(--color-bg-bottom) 100%);
+}
+
+.interactive-bg-goldwash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 20%, var(--color-gold-16) 0%, transparent 34%),
+    radial-gradient(circle at 78% 16%, var(--color-gold-11) 0%, transparent 28%),
+    radial-gradient(circle at 50% 52%, var(--color-gold-10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 84%, var(--color-gold-08) 0%, transparent 34%);
+}
+
+.interactive-bg-icons {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.interactive-bg-symbol-shell {
+  position: absolute;
+  z-index: 2;
+  transform: translateZ(0) scale(1.08);
+  will-change: transform, opacity, filter;
+}
+
+.interactive-bg-symbol-shell--pulse {
+  z-index: 3;
+}
+
+.interactive-bg-symbol-shell--glow {
+  isolation: isolate;
+}
+
+.interactive-bg-symbol-img,
+.interactive-bg-symbol-reveal {
+  position: absolute;
+  inset: 0;
+}
+
+.interactive-bg-symbol-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.interactive-bg-symbol-img--base {
+  opacity: 1;
+}
+
+.interactive-bg-symbol-img--line {
+  opacity: 0.88;
+  filter:
+    brightness(10)
+    saturate(100%)
+    invert(76%)
+    sepia(77%)
+    saturate(1597%)
+    brightness(104%)
+    contrast(110%)
+}
+.interactive-bg-symbol-img--glow {
+  opacity: 0.42;
+  filter:
+    brightness(100) saturate(100%) invert(76%) sepia(77%) saturate(1597%) hue-rotate(358deg) brightness(103%) contrast(108%) blur(1.2px) drop-shadow(0 0 8px rgba(255, 193, 0, 0.24)) drop-shadow(0 0 18px rgba(255, 193, 0, 0.16));
+}
+
+.interactive-bg-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.6;
+  background-image:
+    linear-gradient(to right, var(--color-gold-22) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-gold-22) 1px, transparent 1px);
+  background-size: var(--bg-grid-size) var(--bg-grid-size);
+}
+
+.interactive-bg-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(6px) saturate(1);
+  -webkit-backdrop-filter: blur(6px) saturate(1);
+  mask-image:
+    radial-gradient(circle var(--bg-reveal-mask-size) at var(--mx, var(--bg-reveal-x)) var(--my, var(--bg-reveal-y)),
+      rgba(0, 0, 0, 0.02) 0,
+      rgba(0, 0, 0, 0.02) var(--bg-reveal-stop-1),
+      rgba(0, 0, 0, 0.08) var(--bg-reveal-stop-2),
+      rgba(0, 0, 0, 0.22) var(--bg-reveal-stop-3),
+      rgba(0, 0, 0, 0.58) var(--bg-reveal-stop-4),
+      black var(--bg-reveal-mask-size));
+  -webkit-mask-image:
+    radial-gradient(circle var(--bg-reveal-mask-size) at var(--mx, var(--bg-reveal-x)) var(--my, var(--bg-reveal-y)),
+      rgba(0, 0, 0, 0.02) 0,
+      rgba(0, 0, 0, 0.02) var(--bg-reveal-stop-1),
+      rgba(0, 0, 0, 0.08) var(--bg-reveal-stop-2),
+      rgba(0, 0, 0, 0.22) var(--bg-reveal-stop-3),
+      rgba(0, 0, 0, 0.58) var(--bg-reveal-stop-4),
+      black var(--bg-reveal-mask-size));
+}
+
+.interactive-bg-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background:
+    radial-gradient(circle at center, transparent 52%, var(--bg-vignette-color) 100%);
+}
+
+@keyframes interactiveBgSymbolPulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    filter:
+      var(--bg-symbol-glow-filter) blur(4px) drop-shadow(0 0 10px var(--color-gold-22)) drop-shadow(0 0 20px var(--color-gold-12));
+  }
+
+  50% {
+    opacity: 0.95;
+    filter:
+      var(--bg-symbol-glow-filter) blur(6px) drop-shadow(0 0 14px var(--color-gold-36)) drop-shadow(0 0 30px var(--color-gold-20));
+  }
+}
+
+.interactive-bg-symbol-shell--glow .interactive-bg-symbol-img--glow,
+.interactive-bg-symbol-shell--pulse .interactive-bg-symbol-img--glow {
+  animation: interactiveBgSymbolPulse var(--motion-symbol-pulse);
+}
+
+@media (max-width: 767px) {
+  .interactive-bg-symbol-shell {
+    opacity: var(--bg-symbol-mobile-opacity) !important;
+    transform: translateZ(0) scale(1.04);
+  }
+
+  .interactive-bg-symbol-shell--glow .interactive-bg-symbol-img--glow,
+  .interactive-bg-symbol-shell--pulse .interactive-bg-symbol-img--glow {
+    filter:
+      var(--bg-symbol-glow-filter) blur(4px) drop-shadow(0 0 8px var(--color-gold-22)) drop-shadow(0 0 14px var(--color-gold-12));
+  }
+}

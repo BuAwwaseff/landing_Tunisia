@@ -1,0 +1,51 @@
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 15% 20%, var(--color-gold-10) 0%, transparent 28%),
+    radial-gradient(circle at 85% 18%, var(--color-white-04) 0%, transparent 24%),
+    radial-gradient(circle at 50% 75%, var(--color-gold-05) 0%, transparent 30%),
+    linear-gradient(
+      180deg,
+      var(--color-bg-top) 0%,
+      var(--color-bg) 40%,
+      var(--color-bg-bottom) 100%
+    );
+}
+
+:where(a, button, input, textarea, select, summary) {
+  transition:
+    color var(--ease-standard),
+    background-color var(--ease-standard),
+    border-color var(--ease-standard),
+    opacity var(--ease-standard),
+    transform var(--ease-standard),
+    box-shadow var(--ease-standard);
+}
+
+:where(a, button) {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-gold-22);
+  color: var(--color-fg);
+}
+
+.landing-page,
+.landing-page > section,
+.landing-page > footer {
+  background-color: transparent !important;
+}
